@@ -3,7 +3,6 @@
 Console.WriteLine("PART 1:");
 string filePath = "TextFile2.txt";
 string[] lines = File.ReadAllLines(filePath);
-
 int[] firstArray = new int[lines.Length];
 int[] secondArray = new int[lines.Length];
 

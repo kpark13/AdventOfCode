@@ -159,36 +159,32 @@ Regex regex = new Regex(pattern);
 
 int sum = 0;
 
-// Match all valid `mul(X,Y)` patterns
 MatchCollection matches = regex.Matches(input);
 
 foreach (Match match in matches)
 {
-    // Extract the two numbers
     int x = int.Parse(match.Groups[1].Value);
     int y = int.Parse(match.Groups[2].Value);
 
-    // Calculate the product and add it to the sum
     sum += x * y;
 }
 
-// Output the result
 Console.WriteLine(sum);
+
+//PART 2
+Console.Writeline("PART 2:");
 string filePath = "TextFile4.txt";
 
-// Read the input from the file
 string input = File.ReadAllText(filePath);
 
-// Regex patterns
 string mulPattern = @"mul\((\d{1,3}),(\d{1,3})\)";
 string doPattern = @"\bdo\(\)";
 string dontPattern = @"\bdon't\(\)";
 
-// Initialize variables
 int sum = 0;
-bool isEnabled = true; // Start with `mul` instructions enabled
+bool isEnabled = true;
 
-// Process input character by character
+
 var matches = Regex.Matches(input, $"{mulPattern}|{doPattern}|{dontPattern}");
 
 foreach (Match match in matches)
@@ -203,15 +199,10 @@ foreach (Match match in matches)
     }
     else if (isEnabled && Regex.IsMatch(match.Value, mulPattern))
     {
-        // Extract numbers from the `mul` instruction
         var mulMatch = Regex.Match(match.Value, mulPattern);
         int x = int.Parse(mulMatch.Groups[1].Value);
         int y = int.Parse(mulMatch.Groups[2].Value);
-
-        // Add the result of multiplication to the sum
         sum += x * y;
     }
 }
-
-// Output the result
 Console.WriteLine(sum);*/

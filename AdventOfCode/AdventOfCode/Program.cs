@@ -173,7 +173,7 @@ foreach (Match match in matches)
 }
 
 // Output the result
-Console.WriteLine($"The sum of all valid multiplications is: {sum}");*/
+Console.WriteLine(sum);
 string filePath = "TextFile4.txt";
 
 // Read the input from the file
@@ -214,4 +214,4 @@ foreach (Match match in matches)
 }
 
 // Output the result
-Console.WriteLine($"The sum of all enabled multiplications is: {sum}");
+Console.WriteLine(sum);*/
